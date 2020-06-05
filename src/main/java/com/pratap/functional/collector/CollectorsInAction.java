@@ -5,10 +5,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Spliterator;
 import java.util.TreeSet;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -64,6 +67,32 @@ public class CollectorsInAction {
 			Map<String, List<Employee>> getByDesignation = employeeList.stream().collect(Collectors.groupingBy(e -> e.getDesignation()));
 			
 			System.out.println(getByDesignation);
+			
+			System.out.println("count by designation");
+			Map<String, Long> countByDesignation = employeeList.stream()
+			.collect(Collectors.groupingBy(employee -> employee.getDesignation(), Collectors.counting()) );
+			
+			System.out.println(countByDesignation);
+			
+			System.out.println("-------fundDistribution------------");
+			Map<String, Double> fundDistribution = employeeList.stream()
+					.collect(Collectors.groupingBy(employee -> employee.getDesignation(), Collectors.summingDouble(employee -> employee.getSalary())) );
+			
+			System.out.println(fundDistribution);
+			
+			System.out.println("--------------- Max salary in respective Department -------------");
+			
+			Map<String, Optional<Double>> maxSalary = employeeList.stream()
+			.collect(
+						Collectors.groupingBy(
+												employee -> employee.getDesignation(),
+												Collectors.mapping(employee -> employee.getSalary(), 
+																	Collectors.maxBy(Comparator.comparing(Function.identity()))
+																	)
+											)
+					);
+			
+			System.out.println(maxSalary);
 			
 		} catch(IOException e) {
 			System.out.println(e);
