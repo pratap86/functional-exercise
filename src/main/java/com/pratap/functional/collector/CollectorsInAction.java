@@ -84,7 +84,7 @@ public class CollectorsInAction {
 			
 			Map<String, Optional<Double>> maxSalary = employeeList.stream()
 					.collect(Collectors.groupingBy(employee -> employee.getDesignation(),
-							Collectors.mapping(employee -> employee.getSalary(),
+							Collectors.mapping((Employee employee) -> employee.getSalary(),
 									Collectors.maxBy(Comparator.comparing(Function.identity())))));
 			
 			System.out.println(maxSalary);
