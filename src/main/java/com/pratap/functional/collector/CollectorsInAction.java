@@ -20,7 +20,7 @@ public class CollectorsInAction {
 
 	public static void main(String[] args) {
 
-		String pathVar = "/Users/835698/development/functional-programming/functional-and-reactive/src/main/java/com/pratap/functional/collector/EmployeeData";
+		String pathVar = "/Users/835698/development/functional-programming/functional-exercise/src/main/java/com/pratap/functional/collector/EmployeeData";
 		
 		Path path = Paths.get(pathVar);
 		

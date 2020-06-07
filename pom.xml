@@ -6,10 +6,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.pratap.functional</groupId>
-	<artifactId>functional-and-reactive</artifactId>
+	<artifactId>functional-exercise</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>functional-and-reactive</name>
+	<name>functional-exercise</name>
 	<url>http://www.example.com</url>
 
 	<properties>

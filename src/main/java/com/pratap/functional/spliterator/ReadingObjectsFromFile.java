@@ -14,7 +14,7 @@ public class ReadingObjectsFromFile {
 
 	public static void main(String[] args) {
 		
-		String pathVar = "/Users/835698/development/functional-programming/functional-and-reactive/src/main/java/com/pratap/functional/spliterator/Books";
+		String pathVar = "/Users/835698/development/functional-programming/functional-exercise/src/main/java/com/pratap/functional/spliterator/Books";
 		
 		Path path = Paths.get(pathVar);
 		
